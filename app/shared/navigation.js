@@ -1,30 +1,22 @@
 var frameModule = require("ui/frame");
 
 module.exports = {
+	startingPage: function() {
+		return "views/available_units/availableUnits";
+	},
+	goToAvailableUnitsPage: function() {
+		frameModule.topmost().navigate("views/available_units/availableUnits");
+	},
+	adminPage: function() {
+		// frameModule.topmost().navigate("admin-page");
+	},
 	goToLoginPage: function() {
 		frameModule.topmost().navigate("views/login/login");
 	},
-	goToRegisterPage: function() {
-		frameModule.topmost().navigate("views/register/register");
-	},
-	goToPasswordPage: function() {
-		frameModule.topmost().navigate("views/password/password");
-	},
 	goToListPage: function() {
-		frameModule.topmost().navigate({
-			moduleName: "views/list/list",
-			clearHistory: true
-		});
-	},
-	signOut: function() {
-		config.invalidateToken();
-		frameModule.topmost().navigate({
-			moduleName: "views/login/login",
-			animated: false,
-			clearHistory: true
-		});
-	},
-	startingPage: function() {
-		return config.token ? "views/list/list" : "views/login/login";
+		// frameModule.topmost().navigate({
+		// 	moduleName: "views/list/list",
+		// 	clearHistory: true
+		// });
 	}
 };
