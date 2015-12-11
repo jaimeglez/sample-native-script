@@ -1,0 +1,7 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <scroll-view>
+    <StackLayout>
+      olis
+    </StackLayout>
+  </scroll-view>
+</Page>

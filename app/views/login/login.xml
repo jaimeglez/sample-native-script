@@ -6,6 +6,6 @@
       </grid-layout>
 
       <button text="Login" id="loginin-button" tap="goAvailableUnits" />
-  </StackLayout>
-</scroll-view>
+    </StackLayout>
+  </scroll-view>
 </Page>

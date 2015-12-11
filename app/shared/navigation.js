@@ -7,16 +7,10 @@ module.exports = {
 	goToAvailableUnitsPage: function() {
 		frameModule.topmost().navigate("views/available_units/availableUnits");
 	},
-	adminPage: function() {
-		// frameModule.topmost().navigate("admin-page");
+	goToUnitPage: function() {
+		frameModule.topmost().navigate("views/unit/unit");
 	},
 	goToLoginPage: function() {
 		frameModule.topmost().navigate("views/login/login");
-	},
-	goToListPage: function() {
-		// frameModule.topmost().navigate({
-		// 	moduleName: "views/list/list",
-		// 	clearHistory: true
-		// });
 	}
 };
