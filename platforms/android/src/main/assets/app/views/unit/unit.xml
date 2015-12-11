@@ -3,6 +3,7 @@
     <StackLayout>
       olis
       <Label text="{{ name }}" textWrap="true" class="title"/>
+      <button text="location" id="test-btn" tap="testing" />
     </StackLayout>
   </scroll-view>
 </Page>

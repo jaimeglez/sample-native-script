@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <scroll-view swipe="goAvailableUnits">
+    <StackLayout>
+      <grid-layout rows="auto, auto">
+        <text-field id="password" text="{{ password }}" hint="Password" returnKeyType="done" returnPress="signIn" row="1" />
+      </grid-layout>
+
+      <button text="Login" id="loginin-button" tap="goAvailableUnits" />
+    </StackLayout>
+  </scroll-view>
+</Page>
