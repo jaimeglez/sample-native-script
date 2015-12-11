@@ -1,6 +1,6 @@
 var application = require("application");
-// application.mainModule = "main-page";
-application.cssFile = "./app.css";
+var inspect = require('util-inspect');
 var navigation = require("./shared/navigation");
+application.cssFile = "./app.css";
 application.mainModule = navigation.startingPage();
 application.start();

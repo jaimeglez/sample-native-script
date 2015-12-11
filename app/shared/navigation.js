@@ -7,8 +7,13 @@ module.exports = {
 	goToAvailableUnitsPage: function() {
 		frameModule.topmost().navigate("views/available_units/availableUnits");
 	},
-	goToUnitPage: function() {
-		frameModule.topmost().navigate("views/unit/unit");
+	goToUnitPage: function(unit) {
+    var navigationEntry = {
+      moduleName: "views/unit/unit",
+      context: unit,
+      animated: true
+    };
+		frameModule.topmost().navigate(navigationEntry);
 	},
 	goToLoginPage: function() {
 		frameModule.topmost().navigate("views/login/login");

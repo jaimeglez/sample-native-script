@@ -1,3 +1,6 @@
+var inspect = require('util-inspect');
+
 exports.pageLoaded = function(args) {
-  console.log('oli desde unit');
+  var page = args.object;
+  page.bindingContext = page._navigationContext;
 };

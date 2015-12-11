@@ -2,6 +2,8 @@ var vmModule = require("./availableUnits-view-model");
 var navigation = require("../../shared/navigation");
 var observableModule = require("data/observable");
 var observableArrayModule = require("data/observable-array");
+var inspect = require('util-inspect');
+
 
 var pageData = new observableModule.Observable({
     unitList: new observableArrayModule.ObservableArray([
@@ -21,7 +23,9 @@ exports.goToLogin = function(args){
     navigation.goToLoginPage();
 };
 
-exports.goToUnit = function(){
-  navigation.goToUnitPage();
+exports.goToUnit = function(args){
+  var unit = args.view.bindingContext;
+  navigation.goToUnitPage(unit);
+
 };
 

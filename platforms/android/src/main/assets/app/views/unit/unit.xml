@@ -2,6 +2,7 @@
   <scroll-view>
     <StackLayout>
       olis
+      <Label text="{{ name }}" textWrap="true" class="title"/>
     </StackLayout>
   </scroll-view>
 </Page>
