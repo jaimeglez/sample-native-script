@@ -1,8 +1,11 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
-  <scroll-view swipe="goToLogin">
-    <StackLayout>
-      <Label text="Ola k ase" class="message" textWrap="true"/>
-      <!-- <Label text="Tap the button faith!!" class="title"/> -->
-    </StackLayout>
+  <scroll-view>
+    <DockLayout stretchLastChild="true">
+      <ListView items="{{ unitList }}" swipe="goToLogin">
+        <ListView.itemTemplate>
+          <Label text="{{ name || 'Downloading...' }}" textWrap="true" class="title" />
+        </ListView.itemTemplate>
+      </ListView>
+    </DockLayout>
   </scroll-view>
 </Page>

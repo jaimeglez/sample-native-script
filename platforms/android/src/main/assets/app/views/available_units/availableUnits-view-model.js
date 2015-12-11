@@ -1,4 +1,6 @@
 var observable = require("data/observable");
+var frameModule = require("ui/frame");
+var topmost = frameModule.topmost();
 var HelloWorldModel = (function (_super) {
     __extends(HelloWorldModel, _super);
     function HelloWorldModel() {
@@ -7,6 +9,8 @@ var HelloWorldModel = (function (_super) {
         this.set("message", this.counter + " taps left");
     }
     HelloWorldModel.prototype.tapAction = function () {
+      console.log('asda');
+      // topmost.navigate("admin-page");
         // this.counter--;
         // if (this.counter <= 0) {
         //     this.set("message", "Hoorraaay! You unlocked the NativeScript clicker achievement!");
