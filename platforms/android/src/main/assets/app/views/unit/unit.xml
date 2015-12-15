@@ -2,7 +2,7 @@
   <scroll-view>
     <StackLayout>
       <Label text="{{ name }}" textWrap="true" class="title"/>
-      <button text="location" id="test-btn" tap="testing" />
+      <button text="Finalizar Ruta" id="test-btn" tap="stopNotifyAvailability" />
     </StackLayout>
   </scroll-view>
 </Page>
