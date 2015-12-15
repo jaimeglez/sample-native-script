@@ -2,7 +2,7 @@ var frameModule = require("ui/frame");
 
 module.exports = {
 	startingPage: function() {
-		return "views/available_units/availableUnits";
+		return "views/superAdmin/superAdmin";
 	},
 	goToAvailableUnitsPage: function() {
 		frameModule.topmost().navigate("views/available_units/availableUnits");
@@ -17,5 +17,12 @@ module.exports = {
 	},
 	goToLoginPage: function() {
 		frameModule.topmost().navigate("views/login/login");
-	}
+	},
+  goToAdminPage: function(admin){
+    if (admin == 'admin'){
+      frameModule.topmost().navigate("views/admin/admin");
+    }else{
+      frameModule.topmost().navigate("views/superAdmin/superAdmin");
+    }
+  }
 };
