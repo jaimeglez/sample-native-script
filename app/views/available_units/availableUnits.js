@@ -31,14 +31,14 @@ function setUpDB(db){
         db.execSQL("INSERT INTO routes (name, remote_id) VALUES (?, ?)", ['622', 'a493a1cc-9568-11e5-8984-feff819cdc9f']);
         db.execSQL("INSERT INTO routes (name, remote_id) VALUES (?, ?)", ['622 TERRANOVA', 'a493c1cc-9569-11e5-8984-feff819cdc9f']);
         db.execSQL("INSERT INTO routes (name, remote_id) VALUES (?, ?)", ['640', 'a493c1cc-9569-11e5-8984-feff819cdc9e']);
-        getRoutes(db);
+        getAvailableRoutes(db);
       });
     });
 };
 
-function getRoutes(db){
+function getAvailableRoutes(db){
   db.resultType(2);
-  db.all("SELECT * FROM routes").then(function(results) {
+  db.all("SELECT * FROM routes WHERE available = 1").then(function(results) {
     pageData.set('unitList', results);
   });
 };
@@ -49,7 +49,7 @@ exports.pageLoaded = function(args) {
   // dbModule.dropDb(dbName);
   db.then(function(db){
     setUpDB(db);
-    if (sqlite.exists(dbName)) getRoutes(db);
+    if (sqlite.exists(dbName)) getAvailableRoutes(db);
   });
 };
 

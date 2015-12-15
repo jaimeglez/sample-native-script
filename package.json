@@ -6,6 +6,7 @@
     }
   },
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "nativescript-sqlite": "^1.0.5",
     "tns-core-modules": "1.5.0",
     "util-inspect": "^0.1.8"

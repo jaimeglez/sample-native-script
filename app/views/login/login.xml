@@ -5,7 +5,7 @@
         <text-field id="password" text="{{ password }}" hint="Password" returnKeyType="done" returnPress="signIn" row="1" />
       </grid-layout>
 
-      <button text="Login" id="loginin-button" tap="goAvailableUnits" />
+      <button text="Login" id="loginin-button" tap="authenticate" />
     </StackLayout>
   </scroll-view>
 </Page>
