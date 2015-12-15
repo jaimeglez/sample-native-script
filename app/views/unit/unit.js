@@ -1,9 +1,6 @@
 var inspect = require('util-inspect');
-
-var buttonModule = require("ui/button");
+var navigation = require("../../shared/navigation");
 var appModule = require("application");
-var platformModule = require("platform");
-
 var locationModule = require("location");
 var isEnabled = locationModule.LocationManager.isEnabled();
 var locationManager = new locationModule.LocationManager();
@@ -38,10 +35,11 @@ function startNotifyAvailability(){
 exports.pageLoaded = function(args) {
   var page = args.object;
   page.bindingContext = page._navigationContext;
-  startNotifyAvailability();
+  // startNotifyAvailability();
 };
 
 exports.stopNotifyAvailability = function(){
   locationManager.stopLocationMonitoring();
+  navigation.goToAvailableUnitsPage();
 };
 
