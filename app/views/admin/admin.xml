@@ -1,7 +1,21 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
   <scroll-view>
-    <StackLayout>
-      estoy en admin
+    <StackLayout orientation="vertical">
+      <text-field id="search" text="{{ search }}" hint="Search" returnKeyType="done" returnPress="signIn"/>
+      <ListView items="{{ routes }}" id="routes">
+        <ListView.itemTemplate>
+          <Label text="{{ name }}" textWrap="true" class="title" tap="testing"/>
+        </ListView.itemTemplate>
+      </ListView>
+
+      <ListView items="{{ selectedRoutes }}" id="test">
+        <ListView.itemTemplate>
+          <Label text="{{ name }}" textWrap="true" class="title"/>
+        </ListView.itemTemplate>
+      </ListView>
+      <button text="Guardar" tap="saveUnit" />
+      <button text="Cerrar sesión" tap="logout" />
     </StackLayout>
   </scroll-view>
 </Page>
+

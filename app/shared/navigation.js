@@ -2,7 +2,7 @@ var frameModule = require("ui/frame");
 
 module.exports = {
 	startingPage: function() {
-		return "views/available_units/availableUnits";
+		return "views/admin/admin";
 	},
 	goToAvailableUnitsPage: function() {
 		frameModule.topmost().navigate("views/available_units/availableUnits");
