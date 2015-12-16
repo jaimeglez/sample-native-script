@@ -38,7 +38,7 @@ function setUpDB(db){
 
 function getAvailableRoutes(db){
   db.resultType(2);
-  db.all("SELECT * FROM routes WHERE available = 1").then(function(results) {
+  db.all("SELECT * FROM routes WHERE available = 0").then(function(results) {
     pageData.set('unitList', results);
   });
 };
