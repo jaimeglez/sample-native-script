@@ -7,10 +7,3 @@ exports.pageLoaded = function pageLoaded(args) {
     console.log('im in admin bitches')
     // page.bindingContext = vmModule.mainViewModel;
 };
-
-exports.pageLoaded = function pageLoaded(args) {
-    var page = args.object;
-    console.log('im in admin bitches')
-    // page.bindingContext = vmModule.mainViewModel;
-};
-

@@ -2,10 +2,10 @@
   <scroll-view>
     <StackLayout>
       <grid-layout rows="auto, auto">
-        <text-field id="unit-name" text="{{ name }}" hint="Unidad" returnKeyType="done" row="1" />
+        <text-field id="unit-name" text="{{ unitObj.name }}" hint="Unidad" returnKeyType="done" row="1" />
       </grid-layout>
       <grid-layout rows="auto, auto">
-        <text-field id="remote-id" text="{{ remoteId }}" hint="ID" returnKeyType="done" row="1" editable="false"/>
+        <text-field id="remote-id" text="{{ unitObj.remote_id }}" hint="ID" returnKeyType="done" row="1" editable="false"/>
       </grid-layout>
       <button text="Guardar" tap="saveUnit" />
       <button text="Cerrar sesión" tap="logout" />
