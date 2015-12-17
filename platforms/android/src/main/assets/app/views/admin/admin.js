@@ -60,12 +60,15 @@ exports.pageLoaded = function(args) {
 exports.addSelectedRoute = function(args) {
   var unit = args.view.bindingContext;
   items = _.without(pageData.get('allRoutes'), unit);
-  selectedRoutes = pageData.get('selectedRoutes');
+  selectedRoutes = _.toArray(pageData.get('selectedRoutes'));
   selectedRoutes.push(unit);
-  console.log(inspect(selectedRoutes));
   pageData.set('allRoutes', items);
   pageData.set('routes', items);
   pageData.set('selectedRoutes', selectedRoutes);
+};
+
+exports.logout = function(){
+  navigation.goToAvailableUnitsPage();
 };
 
 // onChange search
