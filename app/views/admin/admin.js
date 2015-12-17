@@ -35,6 +35,20 @@ function getRoutes(){
   });
 };
 
+function filterRoutes(){
+  if (query != ""){
+    filteredItems = _.filter(pageData.get('allRoutes'), function(item){ return item.name.indexOf(query) > -1; });
+    if (filteredItems.length > 0){
+      pageData.set('routes', filteredItems);
+      pageData.set('noRoutes', 'show');
+    }else{
+      pageData.set('noRoutes', 'hidden');
+    }
+  }else{
+    pageData.set('noRoutes', 'hidden');
+  }
+};
+
 exports.pageLoaded = function(args) {
   var page = args.object;
   search = page.getViewById('search');
@@ -43,27 +57,20 @@ exports.pageLoaded = function(args) {
   getRoutes();
 };
 
-exports.testing = function() {
-  // console.log(inspect(pageData.get('search')));
+exports.addSelectedRoute = function(args) {
+  var unit = args.view.bindingContext;
+  items = _.without(pageData.get('allRoutes'), unit);
+  selectedRoutes = pageData.get('selectedRoutes');
+  selectedRoutes.push(unit);
+  console.log(inspect(selectedRoutes));
+  pageData.set('allRoutes', items);
+  pageData.set('routes', items);
+  pageData.set('selectedRoutes', selectedRoutes);
 };
 
+// onChange search
 pageData.on(observableModule.Observable.propertyChangeEvent, function(propertyChangeData){
   query = propertyChangeData.value;
   property = propertyChangeData.propertyName;
-  console.log(property)
-  if (property == "search"){
-    if (query != ""){
-      filteredItems = _.filter(pageData.get('allRoutes'), function(item){ return item.name.indexOf(query) > -1; });
-      if (filteredItems.length > 0){
-        pageData.set('routes', filteredItems);
-        console.log('ago');
-        pageData.set('noRoutes', 'show');
-      }else{
-        console.log('nada');
-        pageData.set('noRoutes', 'hidden');
-      }
-    }else{
-      pageData.set('noRoutes', 'hidden');
-    }
-  }
+  if (property == 'search'){ filterRoutes(query); }
 });

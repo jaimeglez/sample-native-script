@@ -61,6 +61,5 @@ exports.goToLogin = function(args){
 exports.goToUnit = function(args){
   var unit = args.view.bindingContext;
   navigation.goToUnitPage(unit);
-
 };
 

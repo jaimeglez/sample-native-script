@@ -18,10 +18,15 @@ button {
   height: 100%;
 }
 .hidden{
-  color: red;
   visibility: collapse;
 }
 .show{
-  color: red;
   visibility: visible;
+}
+#unselectedRoutes{
+  background-color: #eee;
+  height: 300;
+}
+.item{
+  color: blue;
 }

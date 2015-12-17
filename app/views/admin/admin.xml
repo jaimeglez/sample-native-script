@@ -2,9 +2,9 @@
   <scroll-view>
     <StackLayout orientation="vertical">
       <text-field id="search" text="{{ search }}" hint="Search" returnKeyType="done" returnPress="signIn"/>
-      <ListView items="{{ routes }}" id="routes-list" class="{{ noRoutes }}">
+      <ListView items="{{ routes }}" id="routes-list" class="{{ noRoutes }}" id="unselectedRoutes">
         <ListView.itemTemplate>
-          <Label text="{{ name }}" textWrap="true" class="title" tap="testing"/>
+          <Label text="{{ name }}" textWrap="true" class="title item" tap="addSelectedRoute"/>
         </ListView.itemTemplate>
       </ListView>
 
