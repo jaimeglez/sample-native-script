@@ -2,7 +2,7 @@
   <scroll-view>
     <StackLayout orientation="vertical">
       <text-field id="search" text="{{ search }}" hint="Search" returnKeyType="done" returnPress="signIn"/>
-      <ListView items="{{ routes }}" id="routes">
+      <ListView items="{{ routes }}" id="routes-list" class="{{ noRoutes }}">
         <ListView.itemTemplate>
           <Label text="{{ name }}" textWrap="true" class="title" tap="testing"/>
         </ListView.itemTemplate>

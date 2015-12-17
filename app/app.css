@@ -17,3 +17,11 @@ button {
 #available-units-container{
   height: 100%;
 }
+.hidden{
+  color: red;
+  visibility: collapse;
+}
+.show{
+  color: red;
+  visibility: visible;
+}
