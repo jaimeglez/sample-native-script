@@ -17,3 +17,16 @@ button {
 #available-units-container{
   height: 100%;
 }
+.hidden{
+  visibility: collapse;
+}
+.show{
+  visibility: visible;
+}
+#unselectedRoutes{
+  background-color: #eee;
+  height: 300;
+}
+.item{
+  color: blue;
+}

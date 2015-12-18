@@ -1,15 +1,15 @@
 {
-  "nativescript": {
-    "id": "org.nativescript.tnsslide",
-    "tns-android": {
-      "version": "1.5.0"
-    }
-  },
-  "dependencies": {
-    "bcryptjs": "^2.3.0",
-    "nativescript-drop-down": "^1.1.1",
-    "nativescript-sqlite": "^1.0.5",
-    "tns-core-modules": "1.5.0",
-    "util-inspect": "^0.1.8"
-  }
+	"nativescript": {
+		"id": "org.nativescript.tnsslide",
+		"tns-android": {
+			"version": "1.5.1"
+		}
+	},
+	"dependencies": {
+		"bcryptjs": "^2.3.0",
+		"nativescript-drop-down": "^1.1.1",
+		"nativescript-sqlite": "^1.0.5",
+		"tns-core-modules": "1.5.0",
+		"util-inspect": "^0.1.8"
+	}
 }
