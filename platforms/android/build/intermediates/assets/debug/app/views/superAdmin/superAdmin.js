@@ -4,13 +4,16 @@ var Unit = require("../../shared/unit")
 var observableModule = require("data/observable");
 
 var pageData = new observableModule.Observable({
-  unitObj: { remote_id: '', name: '', remote_location: false }
+  unitObj: { remote_id: '', name: '', remote_location: false },
+  checked: false
 });
 
 function getUnit() {
   Unit.get().then(function(unit){
-    // console.log(inspect(unit));
-    pageData.set('unitObj', unit);
+    if (unit) {
+      pageData.set('unitObj', unit);
+      pageData.set('checked', pageData.get('unitObj').remote_location);
+    }
   });
 };
 
@@ -23,10 +26,17 @@ exports.pageLoaded = function pageLoaded(args) {
 };
 
 exports.saveUnit = function() {
-  unitObj = { remote_id: remote_id.text, name: name.text, remote_location: false };
+  unitObj = { remote_id: remote_id.text, name: name.text, remote_location: pageData.get('checked') };
   Unit.save(unitObj, function(unit){
     getUnit();
   });
+};
+
+exports.toggleCheckBox = function(){
+  unit = pageData.get('unitObj');
+  unit.remote_location = !unit.remote_location;
+  pageData.set('unitObj', unit);
+  pageData.set('checked', unit.remote_location);
 };
 
 exports.logout = function(){

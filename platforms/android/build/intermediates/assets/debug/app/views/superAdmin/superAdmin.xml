@@ -7,7 +7,10 @@
       <grid-layout rows="auto, auto">
         <text-field id="remote-id" text="{{ unitObj.remote_id }}" hint="ID" returnKeyType="done" row="1" editable="false"/>
       </grid-layout>
-      <!-- <image src="{{ 'res://checked' }}" col="0" /> -->
+      <grid-layout columns="auto, *" backgroundColor="white">
+        <Image tap="toggleCheckBox" src="{{ checked ? '~/images/checked.png' : '~/images/unchecked.png' }}" class="checkbox" col="0"/>
+        <label text="Localización remota" col="1" />
+      </grid-layout>
       <button text="Guardar" tap="saveUnit" />
       <button text="Cerrar sesión" tap="logout" />
     </StackLayout>

@@ -14,7 +14,7 @@ function saveDb(remote_id, name, remote_location, callback) {
     db.execSQL(query, [1, remote_id, name, remotelocationNumber]).then(function(results) {
       alert('Unidad guardada con exito');;
       callback();
-    });
+    }, function(e){alert(e);});
   });
 };
 

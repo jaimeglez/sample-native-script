@@ -218,13 +218,13 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <!-- From: file:/Users/jaime/sace-work/ionic/tns-slide/platforms/android/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name">tnsslide</string>
+    <string name="app_name">Groceries</string>
     <!-- From: file:/Users/jaime/sace-work/ionic/tns-slide/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/Users/jaime/sace-work/ionic/tns-slide/platforms/android/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="title_activity_kimera">tnsslide</string>
+    <string name="title_activity_kimera">Groceries</string>
     <!-- From: file:/Users/jaime/sace-work/ionic/tns-slide/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/values/values.xml -->
     <eat-comment/>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

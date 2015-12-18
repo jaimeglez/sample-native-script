@@ -2,6 +2,7 @@ var inspect = require('util-inspect');
 var navigation = require("../../shared/navigation");
 var appModule = require("application");
 var locationModule = require("location");
+var ApiService = require('../../shared/api_service');
 var isEnabled = locationModule.LocationManager.isEnabled();
 var locationManager = new locationModule.LocationManager();
 var locationOptions = {
@@ -13,7 +14,7 @@ var locationOptions = {
 };
 
 function setPosition(latitude, longitude){
-  console.log(latitude + " " + longitude)
+  ApiService.setPosition(latitude, longitude);
 };
 
 function showEnableLocation(){
@@ -35,7 +36,7 @@ function startNotifyAvailability(){
 exports.pageLoaded = function(args) {
   var page = args.object;
   page.bindingContext = page._navigationContext;
-  // startNotifyAvailability();
+  startNotifyAvailability();
 };
 
 exports.stopNotifyAvailability = function(){
