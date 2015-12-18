@@ -10,10 +10,10 @@
 
       <ListView items="{{ selectedRoutes }}" id="test">
         <ListView.itemTemplate>
-          <Label text="{{ name }}" textWrap="true" class="title"/>
+          <Label text="{{ name }}" textWrap="true" class="title" tap="removeSelectedRoute"/>
         </ListView.itemTemplate>
       </ListView>
-      <button text="Guardar" tap="saveUnit" />
+      <button text="Guardar" tap="saveRoutes" />
       <button text="Cerrar sesión" tap="logout" />
     </StackLayout>
   </scroll-view>

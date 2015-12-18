@@ -24,13 +24,13 @@ function setUpDB(db){
         db.execSQL("INSERT INTO admins (password, admin_type) VALUES (?, ?)", ['$2a$10$ttnJSL/cpJaSRvdgLdX3M.ZNi3Dh6Bso/4mF7H2Q58NB23x00hhui', 'superAdmin']);
       });
     });
-  db.execSQL("CREATE TABLE IF NOT EXISTS routes (name TEXT, remote_id TEXT, available BOOLEAN NOT NULL CHECK (available IN (0,1)) DEFAULT 0)")
+  db.execSQL("CREATE TABLE IF NOT EXISTS routes (rowid TEXT,name TEXT, remote_id TEXT, available BOOLEAN NOT NULL CHECK (available IN (0,1)) DEFAULT 0)")
     .then(function(){
       db.all("SELECT * FROM routes").then(function(results) {
         if (results.length > 0) return;
-        db.execSQL("INSERT INTO routes (name, remote_id) VALUES (?, ?)", ['622', 'a493a1cc-9568-11e5-8984-feff819cdc9f']);
-        db.execSQL("INSERT INTO routes (name, remote_id) VALUES (?, ?)", ['622 TERRANOVA', 'a493c1cc-9569-11e5-8984-feff819cdc9f']);
-        db.execSQL("INSERT INTO routes (name, remote_id) VALUES (?, ?)", ['640', 'a493c1cc-9569-11e5-8984-feff819cdc9e']);
+        db.execSQL("INSERT INTO routes (rowid, name, remote_id) VALUES (?, ?, ?)", [1, '622', 'a493a1cc-9568-11e5-8984-feff819cdc9f']);
+        db.execSQL("INSERT INTO routes (rowid, name, remote_id) VALUES (?, ?, ?)", [2, '622 TERRANOVA', 'a493c1cc-9569-11e5-8984-feff819cdc9f']);
+        db.execSQL("INSERT INTO routes (rowid, name, remote_id) VALUES (?, ?, ?)", [3, '640', 'a493c1cc-9569-11e5-8984-feff819cdc9f']);
         getAvailableRoutes(db);
       });
     });
@@ -38,7 +38,7 @@ function setUpDB(db){
 
 function getAvailableRoutes(db){
   db.resultType(2);
-  db.all("SELECT * FROM routes WHERE available = 0").then(function(results) {
+  db.all("SELECT * FROM routes WHERE available = 1").then(function(results) {
     pageData.set('unitList', results);
   });
 };

@@ -6,6 +6,7 @@ var sqlite = require('nativescript-sqlite');
 var dbName = 'rutaway-drivers.sqlite';
 var dbModule = require("../../shared/db");
 var db = dbModule.openDb(dbName);
+var UnitRoute = require('../../shared/unit_route');
 // var Authentication = require("../../shared/authentication")
 var observableModule = require("data/observable");
 var observableArrayModule = require("data/observable-array");
@@ -59,12 +60,33 @@ exports.pageLoaded = function(args) {
 
 exports.addSelectedRoute = function(args) {
   var unit = args.view.bindingContext;
-  items = _.without(pageData.get('allRoutes'), unit);
+  routes = _.without(pageData.get('allRoutes'), unit);
   selectedRoutes = _.toArray(pageData.get('selectedRoutes'));
   selectedRoutes.push(unit);
-  pageData.set('allRoutes', items);
-  pageData.set('routes', items);
+  pageData.set('allRoutes', routes);
+  pageData.set('routes', routes);
   pageData.set('selectedRoutes', selectedRoutes);
+  pageData.set('noRoutes', 'hidden');
+  pageData.set('search', '');
+};
+
+exports.removeSelectedRoute = function(args) {
+  var unit = args.view.bindingContext;
+  routes = _.without(pageData.get('selectedRoutes'), unit);
+  allRoutes = _.toArray(pageData.get('allRoutes'));
+  console.dump(allRoutes);
+  allRoutes.push(unit);
+  console.dump(allRoutes);
+  pageData.set('allRoutes', allRoutes);
+  pageData.set('selectedRoutes', routes);
+  pageData.set('noRoutes', 'hidden');
+  pageData.set('search', '');
+};
+
+exports.saveRoutes = function() {
+  UnitRoute.save(pageData.get('selectedRoutes'), pageData.get('allRoutes'), function(){
+    alert('Salvado Exitosamente');
+  });
 };
 
 exports.logout = function(){

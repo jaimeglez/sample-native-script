@@ -42,7 +42,6 @@ function update(unit, callback) {
     content: JSON.stringify(params)
   }).then(function(response) {
     result = response.content.toJSON();
-    console.log(inspect(result));
     saveDb(result.id, unit.name, unit.remote_location, callback);
   }, function(error){
     alert(error.data.errors[0].message);
@@ -61,10 +60,8 @@ module.exports = {
   save: function(unit, callback) {
     var params = {unit_name: unit.name};
     if (unit.remote_id && unit.remote_id != '') {
-      console.log('update');
       update(unit, callback);
     } else {
-      console.log('create');
       create(unit, callback);
     }
   }
