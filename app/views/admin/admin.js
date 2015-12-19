@@ -1,4 +1,3 @@
-var inspect = require('util-inspect');
 var globals = require("globals");
 var _ = require('underscore');
 var navigation = require("../../shared/navigation");

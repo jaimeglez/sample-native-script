@@ -1,4 +1,3 @@
-var inspect = require('util-inspect');
 var navigation = require("../../shared/navigation");
 var Unit = require("../../shared/unit")
 var observableModule = require("data/observable");

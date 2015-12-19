@@ -2,7 +2,6 @@ var vmModule = require("./availableUnits-view-model");
 var navigation = require("../../shared/navigation");
 var observableModule = require("data/observable");
 var observableArrayModule = require("data/observable-array");
-var inspect = require('util-inspect');
 var globals = require("globals");
 
 var sqlite = require('nativescript-sqlite');

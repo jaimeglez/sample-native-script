@@ -1,5 +1,4 @@
 // var vmModule = require("./availableUnits-view-model");
-var inspect = require('util-inspect');
 var navigation = require("../../shared/navigation");
 var Authentication = require("../../shared/authentication")
 
@@ -15,7 +14,6 @@ exports.goAvailableUnits = function(args){
 
 exports.authenticate = function() {
   Authentication.Login(password.text, function(response){
-    console.log(inspect(response));
     if (response.success){
       // Authentication.SetCredentials(response.type);
       navigation.goToAdminPage(response.type);

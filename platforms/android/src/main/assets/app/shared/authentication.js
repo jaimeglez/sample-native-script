@@ -1,5 +1,4 @@
 var sqlite = require('nativescript-sqlite');
-var inspect = require('util-inspect');
 var dbName = 'rutaway-drivers.sqlite';
 var dbModule = require("./db");
 var db = dbModule.openDb(dbName);
